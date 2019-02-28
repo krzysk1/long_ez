@@ -3,7 +3,8 @@
         <[int][Version][210]>
         <[vec32array][ContactSpheres][ (2.2 0 -0.96 0.04) (1.993 0 -1.159 0.04) (-0.39 0.708 -1.159 0.04) (-0.39 -0.708 -1.159 0.04) ]>
         <[string8][DisplayName][Rutan Long-EZ]>
-        <[string8][DescriptionTextEN][The Rutan Model 61 Long-EZ is a homebuilt aircraft with a canard layout designed by Burt Rutan's Rutan Aircraft Factory. It is derived from the VariEze, which was first offered to homebuilders in 1976. The prototype, N79RA of the Long-EZ first flew on June 12, 1979. (from Wikipedia)#Converted from FlightGear by krzysk(at)wp.pl, 3D model by Emmanuel Baranger (3D/FDM), Daniel Mortara (FDM), Victhor Foster (Panel).]>
+        <[string8][DescriptionTextEN][The Rutan Model 61 Long-EZ is a homebuilt aircraft with a canard layout designed by Burt Rutan's Rutan Aircraft Factory. It is derived from the VariEze, which was first offered to homebuilders in 1976. The prototype, N79RA of the Long-EZ first flew on June 12, 1979. (from Wikipedia)
+		Converted from FlightGear by Krzysztof Kaniewski, 3D model by Emmanuel Baranger (3D/FDM), Daniel Mortara (FDM), Victhor Foster (Panel).]>
         <[float64][WingSpan][7.8]>
         <[float64][Mass][340.2]>
         <[float64][MinimumSpeed][32.5]>
