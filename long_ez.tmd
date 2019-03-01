@@ -1073,7 +1073,7 @@
         >
         <[pointer_list_tmgraphics][GraphicObjects][]
             <[rigidbodygraphics][Fuselage][]
-                <[string8][GeometryList][ canard fuselage trous bol interieur inttour siege1 siege2 panel ]>
+                <[string8][GeometryList][ canard fuselage trous interieur inttour siege1 siege2 panel ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
             >
@@ -1201,7 +1201,7 @@
                 <[uint32][NumberStops][0]>
             >
             <[rotatingbodygraphics][HeliceComplete_9Cone][]
-                <[string8][GeometryList][ helice ]>
+                <[string8][GeometryList][ bol ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][AngleID][Propeller.RotationAngle]>
@@ -1209,7 +1209,7 @@
                 <[tmvector3d][Pivot][-1.61 0.0 0.009]>
             >
             <[graphics_propeller_blade][HeliceComplete_9Blades][]
-                <[string8][GeometryList][]>
+                <[string8][GeometryList][ helice ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][AngleID][Propeller.RotationAngle]>
