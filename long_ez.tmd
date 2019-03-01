@@ -1969,7 +1969,7 @@
                 <[string8][InputPitch][RPMPitchWind.Output]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][VelocityID][Fuselage.V]>
-                <[string8][SoundFile][prop1_inn.wav]>
+                <[string8][SoundFile][propeller.wav]>
                 <[bool][External][false]>
             >
             <[soundloop][RPMWindLoopExt][]
@@ -1977,7 +1977,7 @@
                 <[string8][InputPitch][RPMPitchWind.Output]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][VelocityID][Fuselage.V]>
-                <[string8][SoundFile][PROPELLER_OF_AIRPLANE.wav]>
+                <[string8][SoundFile][propeller.wav]>
                 <[bool][Internal][false]>
             >			
 
