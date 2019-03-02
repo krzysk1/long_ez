@@ -1070,6 +1070,72 @@
             <[output][VerticalSpeedIndicatorNeedle][]
                 <[string8][Input][VerticalSpeedIndicator.VerticalSpeed]>
             >
+			
+            // external lights start
+
+            // strobe lights
+            <[input_switch][StrobeLightSwitch][]
+                <[string8][Input][Controls.Lighting.Strobe]>
+                <[string8][Events][ SwitchSound.Trigger ]>
+                <[string8][EventsRelease][ SwitchSound.Trigger ]>
+                <[float64][Value][0.0]>
+            >
+            <[output][StrobeLightOn][]
+                <[string8][Input][StrobeLightSwitch.Output]>
+            >
+
+            // navigation lights
+            <[input_switch][NavigationLightSwitch][]
+                <[string8][Input][Controls.Lighting.Navigation]>
+                <[string8][Events][ SwitchSound.Trigger ]>
+                <[string8][EventsRelease][ SwitchSound.Trigger ]>
+                <[float64][Value][0.0]>
+            >
+            <[output][NavigationLightOn][]
+                <[string8][Input][NavigationLightSwitch.Output]>
+            >
+			
+            // beacon light
+            <[input_switch][BeaconLightSwitch][]
+                <[string8][Input][Controls.Lighting.Beacon]>
+                <[string8][Events][ SwitchSound.Trigger ]>
+                <[string8][EventsRelease][ SwitchSound.Trigger ]>
+                <[float64][Value][0.0]>
+            >
+            <[output][BeaconLightOn][]
+                <[string8][Input][BeaconLightSwitch.Output]>
+            >
+			
+            // landing lights
+            <[input_switch][LandingLightSwitch][]
+                <[string8][Input][Controls.Lighting.Landing]>
+                <[string8][Events][ SwitchSound.Trigger ]>
+                <[string8][EventsRelease][ SwitchSound.Trigger ]>
+                <[float64][Value][0.0]>
+            >
+            <[output][LandingLightOn][]
+                <[string8][Input][LandingLightSwitch.Output]>
+            >
+			
+            // external lighting end
+
+
+            // animations start
+
+            // canopy
+			
+            // switches
+			
+            // animations end
+
+            // sound events
+            <[event_sound][ButtonSound][]
+            >
+            <[event_sound][SwitchSound][]
+            >
+            <[event_sound][KnobTurnSound][]
+            >
+						
         >
         <[pointer_list_tmgraphics][GraphicObjects][]
             <[rigidbodygraphics][Fuselage][]
@@ -1087,27 +1153,24 @@
                 <[uint32][PositionID][RightWing.R]>
                 <[uint32][OrientationID][RightWing.Q]>
             >
+			
+			// beacon light
             <[graphics_input][UniversalTime][]
                 <[uint32][InputID][UniversalTime.Output]>
-            >			
-            <[graphics_flasher][StrobeFlasher][]
-                <[string8][Function][DoublePulse]>
-                <[string8][InputTime][UniversalTime.Output]>				
-                <[float64][Period][2.0]>
-            >
+            >				
             <[graphics_flasher][BeaconFlasher][]
                 <[string8][Function][Triangle]>
-                <[string8][InputTime][UniversalTime.Output]>				
+                <[string8][InputTime][UniversalTime.Output]>
                 <[float64][Period][2.493]>
                 <[float64][Minimum][0.1]>
-            >
-            <[graphics_input][LandingLightInput][]
-                <[uint32][InputID][ServoGearSequence.Output]>
-            >
-            <[graphics_mapping][LandingLightSwitch][]
-                <[string8][Input][LandingLightInput.Output]>
-                <[tmvector2d][Map][(0.4 0.0) (0.5 1.0)]>
-            >
+            >			
+            <[graphics_input][BeaconLightOn][]
+                <[uint32][InputID][BeaconLightOn.Output]>
+            >			
+            <[graphics_product][BeaconSwitched][]
+                <[uint32][Input0][BeaconFlasher.Output]>
+                <[uint32][Input1][BeaconLightOn.Output]>
+            >	
             <[graphics_pointlight][LightBeacon_0][]
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
@@ -1116,32 +1179,53 @@
                 <[float64][ConeCenter][-0.5]>
                 <[float64][ConeCutoff][-0.7]>
                 <[tmvector3d][Color][ 1.0 0.4 0.0 1.0 ]>
-                <[string8][InputModulation][BeaconFlasher.Output]>
+                <[string8][InputModulation][BeaconSwitched.Output]>
                 <[float64][Size][0.04]>
                 <[float64][Brightness][4.0]>
             >
-            <[graphics_pointlight][LightLeftNav_1][]
+
+            // navigation lights
+            <[graphics_input][NavigationLightOn][]
+                <[uint32][InputID][NavigationLightOn.Output]>
+            >			
+            <[graphics_pointlight][LeftWingTipLightRed][]
                 <[uint32][PositionID][LeftWing.R]>
                 <[uint32][OrientationID][LeftWing.Q]>
                 <[tmvector3d][R0][-1.5680 3.8020 -0.0370]>
                 <[tmvector3d][X0][ 0.7 0.7 0.0 ]>
                 <[tmvector3d][Color][ 1.0 0.3 0.1 1.0 ]>
                 <[float64][Brightness][ 1.0 ]>
+                <[string8][InputModulation][NavigationLightOn.Output]>						
             >
-            <[graphics_pointlight][LightRightNav_2][]
+            <[graphics_pointlight][RightWingTipLightGreen][]
                 <[uint32][PositionID][RightWing.R]>
                 <[uint32][OrientationID][RightWing.Q]>
                 <[tmvector3d][R0][-1.5680 -3.8020 -0.0370]>
                 <[tmvector3d][X0][ 0.7 -0.7 0.0 ]>
                 <[tmvector3d][Color][ 0.2 0.7 0.1 1.0 ]>
                 <[float64][Brightness][ 1.0 ]>
+                <[string8][InputModulation][NavigationLightOn.Output]>						
             >
+
+			// strobe lights	
+            <[graphics_flasher][StrobeFlasher][]
+                <[string8][Function][DoublePulse]>
+                <[string8][InputTime][UniversalTime.Output]>    
+                <[float64][Period][2.0]>
+            >			
+            <[graphics_input][StrobeLightOn][]
+                <[uint32][InputID][StrobeLightOn.Output]>
+            >			
+            <[graphics_product][StrobeSwitched][]
+                <[uint32][Input0][StrobeFlasher.Output]>
+                <[uint32][Input1][StrobeLightOn.Output]>
+            >				
             <[graphics_pointlight][LightStrobe_5][]
                 <[uint32][PositionID][LeftWing.R]>
                 <[uint32][OrientationID][LeftWing.Q]>
                 <[tmvector3d][R0][-1.5880 3.8020 -0.0370]>
                 <[tmvector3d][X0][ 0.0 1.0 0.0 ]>
-                <[string8][InputModulation][StrobeFlasher.Output]>
+                <[string8][InputModulation][StrobeSwitched.Output]>
                 <[tmvector3d][Color][ 0.7 0.7 1.0 1.0 ]>
                 <[float64][Size][0.03]>
                 <[float64][ConeCenter][0.0]>
@@ -1153,13 +1237,18 @@
                 <[uint32][OrientationID][RightWing.Q]>
                 <[tmvector3d][R0][-1.5880 -3.8020 -0.0370]>
                 <[tmvector3d][X0][ 0.0 -1.0 0.0 ]>
-                <[string8][InputModulation][StrobeFlasher.Output]>
+                <[string8][InputModulation][StrobeSwitched.Output]>
                 <[tmvector3d][Color][ 0.7 0.7 1.0 1.0 ]>
                 <[float64][Size][0.03]>
                 <[float64][ConeCenter][0.0]>
                 <[float64][ConeCutoff][-0.5]>
                 <[float64][Brightness][10.0]>
             >
+			
+			// landing lights	
+            <[graphics_input][LandingLightOn][]
+                <[uint32][InputID][LandingLightOn.Output]>
+            >			
             <[graphics_pointlight][Landing-Light-Left_7][]
                 <[uint32][PositionID][LeftWing.R]>
                 <[uint32][OrientationID][LeftWing.Q]>
@@ -1170,7 +1259,7 @@
                 <[float64][Size][0.1]>
                 <[tmvector3d][Color][ 1.0 0.9 0.8 1.0 ]>
                 <[float64][Brightness][4.0]>
-                <[string8][InputModulation][LandingLightSwitch.Output]>
+                <[string8][InputModulation][LandingLightOn.Output]>
             >
             <[graphics_pointlight][Landing-Light-Right_8][]
                 <[uint32][PositionID][RightWing.R]>
@@ -1182,8 +1271,9 @@
                 <[float64][Size][0.1]>
                 <[tmvector3d][Color][ 1.0 0.9 0.8 1.0 ]>
                 <[float64][Brightness][4.0]>
-                <[string8][InputModulation][LandingLightSwitch.Output]>
+                <[string8][InputModulation][LandingLightOn.Output]>
             >
+			
 			// propeller
             <[propellergraphics][HeliceComplete_9][]
                 <[string8][GeometryList][ propdisc ]>
