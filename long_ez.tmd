@@ -1,4 +1,5 @@
 <[file][][]
+
 	//-------------------------------------
 	// Plane: Long-EZ
 	// Made: by krzysk(at)wp.pl
@@ -881,7 +882,7 @@
                 <[string8][InputLeftMagneto][LeftMagneto.Output]>
                 <[string8][InputRightMagneto][RightMagneto.Output]>
                 <[string8][RotationSpeed][DriveShaft.RotationSpeed]>
-                <[string8][InputAngle][DriveShaft.OutputAngle]>	
+                <[string8][InputAngle][PropellerJoint.Output]>
                 <[float64][RotationInertia][1.177600]>
                 <[float64][ThrottleIdle][0.1]>
                 <[string8][AddTorque][DriveShaft.AddTorque]>
@@ -889,7 +890,7 @@
                 <[float64][Friction][50.0]>
                 <[float64][RatedRotationSpeed][270.0]>
                 <[float64][RatedPower][85755]>
-                <[float64][Displacement][0.0059]>
+                <[float64][Displacement][0.003851]>
             >
             <[air_flow][CoolingAir][]
                 <[string8][Body][Fuselage]>
@@ -1505,7 +1506,7 @@
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][AngleID][Propeller.RotationAngle]>
-                <[tmvector3d][Axis][-1.0 0.0 0.0]>
+                <[tmvector3d][Axis][1.0 0.0 0.0]>
                 <[tmvector3d][Pivot][-1.61 0.0 0.009]>
             >
             <[graphics_propeller_blade][HeliceComplete_9Blades][]
